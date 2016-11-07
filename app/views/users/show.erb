@@ -1,0 +1,21 @@
+<% if current_user %>
+Hello <%= @user.first_name %>!<br><br>
+Here is a list of your subscribed channels:
+<ul>
+<% @user.channels.each do |channel| %>
+<li><a href='/channels/<%= channel.id %>'><%= channel.name %></li></a>
+<% end %><br>
+
+Your current subscription price per month cost is: $
+<%= @user.channels.reduce(0) { |sum,cost| sum += cost.price_per_month } %>
+</ul>
+<br>
+
+<form method='post' action='/sessions'>
+<input type ='hidden' name='_method' value='delete'>
+  <button type="submit">Logout</button> 
+</form>
+
+<% else %>
+<%= "You are not authorized to view this page!" %>
+<% end %>

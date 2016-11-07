@@ -1,0 +1,7 @@
+<h1> List of Channels </h1>
+<% @channels.each do |channel| %>
+<ul>
+<li><a href='/channels/<%= channel.id %>'><%= channel.name
+ %></li>
+</ul>
+	<% end %>

@@ -1,0 +1,17 @@
+<h1>
+  Welcome to Friendly Channels!
+</h1>
+<a href='/users/new'>Sign Up</a><br>
+<a href='/sessions/login'>Log In</a><br>
+<a href='/'>Home</a><br>
+<a href='/channels'>Channels</a>
+
+<% if current_user %>
+<br>
+<br>
+<form method='post' action='/sessions/new'>
+<input type ='hidden' name='_method' value='delete'>
+  <button type="submit">Logout</button> 
+</form>
+
+<% end %>

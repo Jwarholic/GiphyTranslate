@@ -1,0 +1,25 @@
+<h1> Channel Information </h1>
+Channel Name:
+<%= @channel.name %>
+<br>
+Channel Callsign:
+<%= @channel.callsign %>
+<br>
+Channel Monthly Price:
+<%= @channel.price_per_month %>
+<br>
+Channel Subscriber Count:
+<%= @channel.subscribers.count %>
+
+
+<% if current_user %>
+<br>
+<br>
+<!-- Subscription button -->
+<form method='post' action='/subscriptions'>
+<input type ='hidden' name='_method' value='puts'>
+  <button type="submit">Subscribe to Channel</button> 
+</form>
+
+
+<% end %>
