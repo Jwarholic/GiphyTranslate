@@ -6,7 +6,7 @@ post '/sessions' do
 	@user = User.authenticate(params[:user])
 	if @user
 		session[:id] = @user.id
-		redirect "/users/#{@user.id}"
+		redirect "/"
 	else
 		@error = "Email and password not a valid combination."
 		erb :'sessions/login'
