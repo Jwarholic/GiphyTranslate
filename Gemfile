@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'yelp', require: 'yelp'
 # PostgreSQL driver
 gem 'pg'
+gem 'easy_translate'
 
 
 # Sinatra driver
@@ -18,6 +19,8 @@ gem 'rake'
 gem 'bcrypt'
 
 gem 'shotgun'
+gem 'dotenv'
+gem 'httparty'
 
 group :development, :test do
   gem 'faker'

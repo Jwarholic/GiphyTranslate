@@ -1,16 +1,122 @@
-<h1>
-  Welcome to Jason's PP!
-</h1>
-<a href='/users/new'>Sign Up</a><br>
-<a href='/sessions/login'>Log In</a><br>
-<a href='/'>Home</a><br>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper">
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="logo">
+        <h1><a href="#">Translator</a></h1>
+      </div>
+      <div id="menu">
+        <ul>
+          <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
+            <% if current_user %>
+            <br>
+            <br>
+            <form method='post' action='/sessions/new'>
+            <input type ='hidden' name='_method' value='delete'>
+              <button type="submit">Logout</button>
+            </form>
 
-<% if current_user %>
-<br>
-<br>
-<form method='post' action='/sessions/new'>
-<input type ='hidden' name='_method' value='delete'>
-  <button type="submit">Logout</button> 
-</form>
+            <% else %>
+              <li><a href='/users/new' accesskey="2" title="">Sign Up</a></li>
+              <li><a href='/sessions/login' accesskey="3" title="">Login</a></li>
+            <% end %>
 
-<% end %>
+
+
+<!--           <li><a href="#" accesskey="3" title="">Gallery</a></li>
+          <li><a href="#" accesskey="4" title="">About Us</a></li>
+          <li><a href="#" accesskey="5" title="">Contact Us</a></li> -->
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="banner" class="container"><img src="https://www.translatemedia.com/wp-content/uploads/2011/12/translate21.jpg" width="1000" height="300" alt="" /></div>
+  <div id="page" class="container">
+    <div id="content">
+      <div id="box1">
+        <h2 class="title">Welcome to my passion project</h2>
+        <p>   I really wanted to practice connecting to an API and be able to work with it. Some goals I wanted out of this was to
+          <ul>
+            <li>use ajax</li>
+            <li>user auth</li>
+            <li>practice some css/html</li>
+            <br>
+          </ul>
+        </p>
+      </div>
+      <div>
+        <ul class="style1">
+          <li class="first">
+
+              <h3><em><img src="http://www.ngtranslation-traduction.co.za/wp-content/uploads/2016/06/Funny-Translation-Image.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Translate ANYTHING!</h3>
+
+              <form method='post' action='/translation/new'>
+
+              Your Language:
+              <select name="input">
+                <% @languages.each do |abbrv,language| %>
+              <option value=<%= abbrv %>><%= language %></option>
+              <% end %>
+              </select>
+              <br>
+              <br>
+              Your Translated Text:
+              <select name="output">
+                <% @languages.each do |abbrv,language| %>
+              <option value=<%= abbrv %>><%= language %></option>
+              <% end %>
+              </select>
+              <br>
+              <br>
+              <input type="text" name="word">
+              <button type="submit">Create Translation</button>
+              </form>
+
+          </li>
+          <li>
+            <h3><em><img src="images/img02.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Magna phasellus etiam ultrices</h3>
+            <p>Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
+            <p><a href="#" class="button-style">Read More</a></p>
+          </li>
+          <li>
+            <h3><em><img src="images/img03.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Magna phasellus etiam ultrices</h3>
+            <p>Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
+            <p><a href="#" class="button-style">Read More</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="sidebar">
+      <h2>Fusce ultrices</h2>
+      <ul class="style3">
+        <li class="first">
+          <p class="date">01-14-2013</p>
+          <p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+        </li>
+        <li>
+          <p class="date">01-13-2013</p>
+          <p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+        </li>
+        <li>
+          <p class="date">01-07-2013</p>
+          <p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+  </div>
+</div>
+</body>
+</html>
+

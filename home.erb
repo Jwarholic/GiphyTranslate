@@ -1,0 +1,40 @@
+<h1>
+  Welcome to Jason's PP!
+</h1>
+<a href='/users/new'>Sign Up</a><br>
+<a href='/sessions/login'>Log In</a><br>
+<a href='/'>Home</a><br>
+
+<% if current_user %>
+<br>
+<br>
+<form method='post' action='/sessions/new'>
+<input type ='hidden' name='_method' value='delete'>
+  <button type="submit">Logout</button>
+</form>
+
+<% end %>
+
+
+<br>
+<form method='post' action='/translation/new'>
+
+  Your Language:
+  <select name="input">
+    <% @languages.each do |abbrv,language| %>
+  <option value=<%= abbrv %>><%= language %></option>
+  <% end %>
+  </select>
+  <br>
+  <br>
+  Your Translated Text:
+  <select name="output">
+    <% @languages.each do |abbrv,language| %>
+  <option value=<%= abbrv %>><%= language %></option>
+  <% end %>
+  </select>
+  <br>
+  <br>
+  <input type="text" name="word">
+  <button type="submit">Create Translation</button>
+</form>
