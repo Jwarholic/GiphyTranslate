@@ -1,8 +1,6 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  has_many :subscriptions
-  has_many :channels, through: :subscriptions
 
 	validates :email, :hashed_password, presence: :true
 	validates :email, uniqueness: true
