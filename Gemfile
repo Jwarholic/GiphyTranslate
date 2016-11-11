@@ -14,7 +14,6 @@ gem 'thin'
 
 gem 'activesupport', "~>4.2"
 gem 'activerecord', "~>4.2"
-
 gem 'rake'
 gem 'bcrypt'
 gem 'pry'
@@ -25,7 +24,6 @@ gem 'awesome_print'
 
 group :development, :test do
   gem 'faker'
-  gem 'rspec'
 end
 
 group :test do
