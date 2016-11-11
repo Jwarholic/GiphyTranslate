@@ -1,9 +1,4 @@
 class CreateUsers < ActiveRecord::Migration
-  #######################################
-  #                                     #
-  #     Do NOT change this schema.      #
-  #                                     #
-  #######################################
   def change
     create_table :users do |t|
       t.string :first_name, :null => false

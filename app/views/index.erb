@@ -11,7 +11,9 @@
   <div id="header-wrapper">
     <div id="header" class="container">
       <div id="logo">
+        <% if current_user %>
         <h1>Hello! <%= current_user.first_name %></h1>
+        <% end %>
       </div>
       <div id="menu">
           <% if current_user %>
@@ -20,16 +22,13 @@
             <button type="submit">Logout</button>
           </form>
           <% end %>
+
         <ul>
           <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
           <% if !current_user %>
           <li><a href='/users/new' accesskey="2" title="">Sign Up</a></li>
           <li><a href='/sessions/login' accesskey="3" title="">Login</a></li>
           <% end %>
-<!--           <li><a href="#" accesskey="3" title="">Gallery</a></li>
-          <li><a href="#" accesskey="4" title="">About Us</a></li>
-          <li><a href="#" accesskey="5" title="">Contact Us</a></li> -->
-
 
         </ul>
       </div>
@@ -65,7 +64,7 @@
               </select>
               <br>
               <br>
-              Your Translated Text:
+              Translate To:
               <select name="output">
                 <% @languages.each do |abbrv,language| %>
               <option value=<%= abbrv %>><%= language %></option>
@@ -73,31 +72,17 @@
               </select>
               <br>
               <br>
-              <input type="text" name="word">
+              <input id='word' type="text" name="word">
               <button type="submit">Create Translation</button>
               </form>
 
           </li>
-          <li>
-            <h3><em><img src="" alt="" width="130" height="130" class="alignleft border" /></em>Magna phasellus etiam ultrices</h3>
-            <p>Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
-            <p><a href="#" class="button-style">Read More</a></p>
-          </li>
-
-
+        </ul>
+        <ul id="body-list" class="style1">
         </ul>
       </div>
     </div>
 
-    <div id="sidebar">
-      <h2>Fusce ultrices</h2>
-      <ul class="style3">
-        <li class="first">
-          <p class="date">01-14-2013</p>
-          <p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
-        </li>
-      </ul>
-    </div>
 
   </div>
 </body>
