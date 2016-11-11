@@ -3,9 +3,9 @@ post '/translation/new' do
   input = params[:input]
   output = params[:output]
   @translation = Translator.translate(@word,input,output)
-  # erb :'translations/new'
+  @giphy = Giphy.add_giphy(@word)
   if request.xhr?
-    erb :'translations/_new', layout: false, locals: {word: @word, language: @language}
+    erb :'translations/_new', layout: false, locals: {word: @word, language: @language, giphy: @giphy}
   else
     erb :'translations/new'
   end

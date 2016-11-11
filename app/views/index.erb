@@ -13,15 +13,14 @@
       <div id="logo">
         <% if current_user %>
         <h1>Hello! <%= current_user.first_name %></h1>
+
+          <form method='post' action='/sessions'>
+            <input type ='hidden' name='_method' value='delete'>
+              <button type="submit">Logout</button>
+          </form>
         <% end %>
       </div>
       <div id="menu">
-          <% if current_user %>
-          <form method='post' action='/sessions'>
-          <input type ='hidden' name='_method' value='delete'>
-            <button type="submit">Logout</button>
-          </form>
-          <% end %>
 
         <ul>
           <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>

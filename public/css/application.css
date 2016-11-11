@@ -49,6 +49,11 @@ a img {
   border: none;
 }
 
+.img-style {
+  display: inline-block;
+  padding:10px;
+}
+
 img.border {
   border: 5px solid rgba(255,255,255,1);
 }
@@ -142,7 +147,7 @@ hr {
 /** MENU */
 
 #menu {
-  float: right;
+  float: left;
   height: 80px;
 }
 
@@ -189,7 +194,7 @@ hr {
 
 #content {
   float: left;
-  width: 600px;
+  width: 1000px;
   padding: 40px;
   background: rgba(0,0,0,0.70);
 }
@@ -268,6 +273,7 @@ ul.style1 p {
 ul.style1 .button-style {
   float: left;
   margin-top: 0px;
+  padding-right:10px;
 }
 
 ul.style1 .first {
