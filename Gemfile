@@ -8,7 +8,7 @@ gem 'easy_translate'
 
 
 # Sinatra driver
-gem 'sinatra'
+gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
 gem 'thin'
 
