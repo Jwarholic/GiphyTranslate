@@ -5,33 +5,8 @@
 </head>
 <body>
 <h2 align="center"> Passion Project </h2>
-<h1 align="center"> Google Translate </h1>
+<h1 align="center"> Giphy Translator </h1>
 <div id="wrapper">
-  <div id="header-wrapper">
-    <div id="header" class="container">
-      <div id="logo">
-        <% if current_user %>
-        <h1>Hello! <%= current_user.first_name %></h1>
-
-          <form method='post' action='/sessions'>
-            <input type ='hidden' name='_method' value='delete'>
-              <button type="submit">Logout</button>
-          </form>
-        <% end %>
-      </div>
-      <div id="menu">
-
-        <ul>
-          <li class="active"><a href="/" accesskey="1" title="">Homepage</a></li>
-          <% if !current_user %>
-          <li><a href='/users/new' accesskey="2" title="">Sign Up</a></li>
-          <li><a href='/sessions/login' accesskey="3" title="">Login</a></li>
-          <% end %>
-
-        </ul>
-      </div>
-    </div>
-  </div>
   <div id="banner" class="container"><img src="https://www.translatemedia.com/wp-content/uploads/2011/12/translate21.jpg" width="1000" height="300" alt="" /></div>
   <div id="page" class="container">
     <div id="content">

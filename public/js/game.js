@@ -1,26 +1,3 @@
-$(document).ready(function () {
-  $('#translate').on('submit', handleTranslateButton);
-});
-
-
-function handleTranslateButton(event){
-  event.preventDefault()
-
-  var form = $(this);
-  var method = $(this).attr('method');
-  var url = $(this).attr('action');
-  var data = $(this).serialize()
-
-  $.ajax({
-    url: url,
-    method: method,
-    data: data,
-  }).done(function(response){
-    $('#body-list').prepend(response);
-  })
-}
-
-
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;
@@ -97,10 +74,12 @@ function collisionDetection() {
 }
 
 function drawBall() {
+    var img=document.getElementById("scream");
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
     ctx.fillStyle = "#0095DD";
     ctx.fill();
+    ctx.drawImage(img,10,10);
     ctx.closePath();
 }
 function drawPaddle() {
