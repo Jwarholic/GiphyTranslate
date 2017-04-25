@@ -1,5 +1,7 @@
+#Module to call google translate
 module Translator
   include HTTParty
+  #This is hiding my google key =) no stealing!
   KEY = ENV['GOOGLE']
 
     def self.translate(word, input, output)

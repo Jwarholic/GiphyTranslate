@@ -1,3 +1,4 @@
+#Module to call the Giphy API
 module Giphy
 
   def self.add_giphy(user_query)

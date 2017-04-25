@@ -1,13 +1,8 @@
 #Passion Project
+- Giphy Translator
 
 
-- Hello World!
+- Hello World! This was a fun project I made that is used as a translator and provides fun giphies along with it.
 
-#Main Goals
-- CSS/HTML/AJAX
-- Get data using a translation API
-- User chooses language / word
-
-
-#Stretch Goal
--Make a flashcard game
+- Used Ajax / Ruby / Sinatra / GOOGLE API / Giphy API 
+- HTML/CSS/JS/AJAX

@@ -6,6 +6,7 @@ $(document).ready(function () {
 function handleTranslateButton(event){
   event.preventDefault()
 
+  debugger
   var form = $(this);
   var method = $(this).attr('method');
   var url = $(this).attr('action');

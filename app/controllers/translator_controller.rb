@@ -8,15 +8,6 @@ post '/translation/new' do
   input = params[:input]
   output = params[:output]
 
-
-  # Error Handling API wont translate same language to same language
-  if request.xhr? 
-    if input == output
-      erb :'translations/_error'
-    end
-  end
-
-  if input =! output
   # - Goes to the translator Module
   # - Uses the translate method to return the translation
   @translation = Translator.translate(@word,input,output)
@@ -30,5 +21,5 @@ post '/translation/new' do
   else
     erb :'translations/new'
   end
-  end
+
 end
