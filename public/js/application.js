@@ -10,6 +10,7 @@ function handleTranslateButton(event){
   var method = $(this).attr('method');
   var url = $(this).attr('action');
   var data = $(this).serialize()
+  debugger
 
   $.ajax({
     url: url,
