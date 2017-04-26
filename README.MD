@@ -7,4 +7,4 @@ Giphy Translator
 - HTML/CSS/JS/AJAX
 
 Check out the APP here!
-[GiphyTranslator](http://giphytranslator.herokuapp.org)
+[GiphyTranslator](http://giphytranslator.herokuapp.com)
